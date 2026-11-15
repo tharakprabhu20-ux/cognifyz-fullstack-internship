@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Desk | College Course Enquiry &amp; Admissions</title>
+  <meta name="description" content="Discover accredited college degree tracks, check eligibility, calculate fees, and secure admission guidance at the Student Registration Desk.">
+
+  <!-- Bootstrap 5.3 CSS via jsDelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Custom Stylesheet (Advanced CSS & Responsive Rules) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       ACCESSIBILITY: Skip to main content for keyboard & screen reader users
+       ========================================================================= -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================================
+       SECTION 1: Responsive Sticky Navbar
+       Bootstrap navbar with brand, collapsible links, and dark mode toggle
+       ========================================================================= -->
+  <header id="navbar" class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom" aria-label="Main Navigation">
+      <div class="container">
+        <!-- Brand Logo / Name -->
+        <a class="navbar-brand" href="#hero">
+          <span aria-hidden="true">🎓</span>
+          <span class="brand-text">StudentRegDesk</span>
+        </a>
+
+        <!-- Right action cluster: Dark mode toggle & mobile hamburger button -->
+        <div class="d-flex align-items-center order-lg-3 ms-2 gap-2">
+          <!-- Dark mode theme toggle -->
+          <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+            <span class="theme-icon-light" aria-hidden="true">🌙</span>
+            <span class="theme-icon-dark" aria-hidden="true">☀️</span>
+          </button>
+
+          <!-- Mobile menu toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainCollapse" aria-controls="navbarMainCollapse" aria-expanded="false" aria-label="Toggle navigation menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- Collapsible navigation links -->
+        <div class="collapse navbar-collapse order-lg-2" id="navbarMainCollapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- =======================================================================
+         SECTION 2: Hero Section
+         Gradient background, animated copy, CTA buttons, and CSS-only graphic
+         ======================================================================= -->
+    <section id="hero" class="hero-section fade-in-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Hero Copy (Left Column) -->
+          <div class="col-lg-6 text-center text-lg-start">
+            <div class="hero-badge">
+              <span aria-hidden="true">⚡</span> Admissions Open for 2026–2027 Academic Year
+            </div>
+            <h1 class="hero-title">
+              Your Gateway to Future-Ready Degrees at <span class="gradient-text">Student Registration Desk</span>
+            </h1>
+            <p class="hero-description">
+              Explore accredited college programs, receive tailored academic counseling, verify course eligibility in minutes, and enroll with absolute clarity.
+            </p>
+            <div class="hero-actions justify-content-center justify-content-lg-start">
+              <a href="#courses" class="btn-cta-primary btn-pulse">
+                <span>Explore Course Tracks</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="#contact" class="btn-cta-secondary">
+                <span>Enquire with an Advisor</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Graphic (Right Column): 100% Pure CSS - No external images -->
+          <div class="col-lg-6">
+            <div class="hero-graphic-wrapper">
+              <!-- Ambient radial glow behind the card -->
+              <div class="hero-graphic-ambient" aria-hidden="true"></div>
+
+              <!-- Floating decorative status chips -->
+              <div class="floating-chip floating-chip-top" aria-hidden="true">
+                <span>✅</span> <span>Seat Eligibility Verified</span>
+              </div>
+              <div class="floating-chip floating-chip-bottom" aria-hidden="true">
+                <span>⭐</span> <span>Top 1% Faculty Mentorship</span>
+              </div>
+
+              <!-- Main illustrated desk portal card -->
+              <div class="hero-visual-card" aria-label="Decorative illustration of student registration dashboard">
+                <div class="desk-badge-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="desk-avatar-icon" aria-hidden="true">🎓</div>
+                    <div>
+                      <div class="fw-bold" style="font-size: 0.95rem;">Admissions Portal</div>
+                      <small class="text-muted" style="font-size: 0.75rem;">Fast-Track Registration</small>
+                    </div>
+                  </div>
+                  <span class="desk-status-pill">Active Session</span>
+                </div>
+
+                <!-- Simulated progress track -->
+                <div class="desk-metric-bar">
+                  <div class="desk-metric-label">
+                    <span>Application Completion</span>
+                    <span>85%</span>
+                  </div>
+                  <div class="desk-progress-track">
+                    <div class="desk-progress-fill"></div>
+                  </div>
+                </div>
+
+                <!-- Academic field tags -->
+                <div class="desk-tags-group">
+                  <span class="desk-tag">💻 Computer Science</span>
+                  <span class="desk-tag">📊 Data Analytics</span>
+                  <span class="desk-tag">⚡ AI &amp; Robotics</span>
+                  <span class="desk-tag">📈 Business Mgmt</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: Features Section
+         Responsive 6-card grid (1 col mobile, 2 col tablet, 3 col desktop)
+         ======================================================================= -->
+    <section id="features" class="features-section section-padding fade-in-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="section-title">Why Register Through Us?</h2>
+          <p class="section-subtitle">
+            We simplify higher education admissions with transparent guidance, fast processing, and direct mentor support.
+          </p>
+        </div>
+
+        <!-- 6 Feature Cards in Responsive Bootstrap Grid -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Feature 1 -->
+          <div class="col">
+            <article class="feature-card">
+              <div class="feature-icon-box" aria-hidden="true">🏛️</div>
+              <h3>Accredited Colleges</h3>
+              <p>Direct tie-ups with premier universities and UGC/AICTE-accredited institutions with audited curricula.</p>
+            </article>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="col">
+            <article class="feature-card">
+              <div class="feature-icon-box" aria-hidden="true">⚡</div>
+              <h3>Instant Eligibility Checker</h3>
+              <p>Evaluate your entrance scores, prerequisites, and grade cutoff criteria in under two minutes.</p>
+            </article>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="col">
+            <article class="feature-card">
+              <div class="feature-icon-box" aria-hidden="true">💳</div>
+              <h3>Transparent Fee Estimates</h3>
+              <p>Zero hidden costs. View detailed semester-by-semester tuition, lab expenses, and scholarship waivers.</p>
+            </article>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="col">
+            <article class="feature-card">
+              <div class="feature-icon-box" aria-hidden="true">🧑‍🏫</div>
+              <h3>1-on-1 Academic Mentors</h3>
+              <p>Schedule personalised video consultations with career mentors to pick the specialization that fits you.</p>
+            </article>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="col">
+            <article class="feature-card">
+              <div class="feature-icon-box" aria-hidden="true">📋</div>
+              <h3>Fast-Track Seat Allotment</h3>
+              <p>Skip tedious campus queues. Submit documents digitally and track your application status live.</p>
+            </article>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="col">
+            <article class="feature-card">
+              <div class="feature-icon-box" aria-hidden="true">🚀</div>
+              <h3>Placement Assistance</h3>
+              <p>Comprehensive resume clinics, technical interview mock drills, and industry recruitment tie-ups.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: Courses Section
+         3 pricing-style tier cards with the middle card highlighted
+         ======================================================================= -->
+    <section id="courses" class="courses-section section-padding fade-in-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="section-title">Popular Academic Degree Tracks</h2>
+          <p class="section-subtitle">
+            Choose the degree pathway that aligns with your professional ambitions and academic background.
+          </p>
+        </div>
+
+        <!-- 3 Cards Grid -->
+        <div class="row g-4 align-items-stretch justify-content-center">
+          <!-- Course Card 1: Undergraduate -->
+          <div class="col-lg-4 col-md-6">
+            <div class="course-card">
+              <div>
+                <div class="course-tier-label">Undergraduate Degrees</div>
+                <h3 class="course-title">Bachelor of Science &amp; Tech</h3>
+                <div class="course-fee">$1,250 <span>/ semester</span></div>
+                <p class="text-muted small">Ideal for high school graduates entering STEM and software disciplines.</p>
+                <ul class="course-features">
+                  <li><span class="course-check" aria-hidden="true">✓</span> 4-Year Full-Time Honors Track</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Practical Coding &amp; Hardware Labs</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Dedicated Faculty Mentor</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Standard Placement Drives</li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn-cta-secondary w-100 justify-content-center">Enquire for B.Sc / B.Tech</a>
+            </div>
+          </div>
+
+          <!-- Course Card 2: Postgraduate & Honours (HIGHLIGHTED / FEATURED) -->
+          <div class="col-lg-4 col-md-6">
+            <div class="course-card highlighted">
+              <div class="popular-badge">Most Popular • High Placement</div>
+              <div>
+                <div class="course-tier-label">Postgraduate &amp; Masters</div>
+                <h3 class="course-title">Master of Computer Apps &amp; AI</h3>
+                <div class="course-fee">$2,450 <span>/ semester</span></div>
+                <p class="text-muted small">Specialized curriculum focused on Cloud, Distributed Systems, &amp; AI.</p>
+                <ul class="course-features">
+                  <li><span class="course-check" aria-hidden="true">✓</span> 2-Year Intensive Capstone Track</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Guaranteed Corporate Internship</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> 1-on-1 Senior Industry Coaching</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Priority Campus Recruitment</li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn-cta-primary w-100 justify-content-center">Apply for M.Sc / MCA Seat</a>
+            </div>
+          </div>
+
+          <!-- Course Card 3: Executive & Dual Degree -->
+          <div class="col-lg-4 col-md-6">
+            <div class="course-card">
+              <div>
+                <div class="course-tier-label">Professional Certification</div>
+                <h3 class="course-title">Executive Dual Degree &amp; Cert</h3>
+                <div class="course-fee">$850 <span>/ module</span></div>
+                <p class="text-muted small">Hybrid evening &amp; weekend programs for working professionals.</p>
+                <ul class="course-features">
+                  <li><span class="course-check" aria-hidden="true">✓</span> Flexible Weekend Lecture Batches</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Global Industry Recognized Credentials</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Peer Networking Seminars</li>
+                  <li><span class="course-check" aria-hidden="true">✓</span> Career Transition Counseling</li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn-cta-secondary w-100 justify-content-center">View Certification Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: Stats Strip (CSS Grid Layout)
+         4 numbers that count up when scrolled into view
+         ======================================================================= -->
+    <section id="stats" class="stats-section fade-in-section">
+      <div class="container">
+        <div class="stats-grid">
+          <!-- Stat 1 -->
+          <div class="stat-item">
+            <span class="stat-number" data-target="1200" data-suffix="+">0</span>
+            <div class="stat-label">Students Guided &amp; Enrolled</div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="stat-item">
+            <span class="stat-number" data-target="25" data-suffix="+">0</span>
+            <div class="stat-label">Accredited Degree Courses</div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="stat-item">
+            <span class="stat-number" data-target="40" data-suffix="+">0</span>
+            <div class="stat-label">Certified Academic Mentors</div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="stat-item">
+            <span class="stat-number" data-target="95" data-suffix="%">0</span>
+            <div class="stat-label">Career Placement Success</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: Testimonials Section
+         Bootstrap Carousel with 3 student testimonials
+         ======================================================================= -->
+    <section id="testimonials" class="testimonials-section section-padding fade-in-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="section-title">What Our Students Say</h2>
+          <p class="section-subtitle">
+            Hear from students who discovered their dream colleges through our registration desk.
+          </p>
+        </div>
+
+        <!-- Bootstrap 5 Carousel -->
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+          <!-- Carousel Slides -->
+          <div class="carousel-inner pb-5">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="testimonial-card">
+                <div class="testimonial-quote-icon" aria-hidden="true">“</div>
+                <blockquote class="testimonial-quote">
+                  The Student Registration Desk simplified everything for me. Instead of running between five college offices, I had my eligibility checked, scholarship assessed, and application confirmed all in one afternoon!
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">PS</div>
+                  <div class="testimonial-meta text-start">
+                    <h4>Priya Sharma</h4>
+                    <p>B.Tech Computer Engineering (Batch 2025)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <div class="testimonial-quote-icon" aria-hidden="true">“</div>
+                <blockquote class="testimonial-quote">
+                  Transparent fee breakdowns made all the difference for my family. The counselors were patient, honest, and guided me into an MCA program with phenomenal campus placements.
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">RM</div>
+                  <div class="testimonial-meta text-start">
+                    <h4>Rohan Mehta</h4>
+                    <p>Master of Computer Applications (Batch 2024)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <div class="testimonial-quote-icon" aria-hidden="true">“</div>
+                <blockquote class="testimonial-quote">
+                  Switching my focus from traditional commerce to digital product analytics seemed intimidating, but my assigned mentor mapped out every prerequisite. I couldn't be happier with my college selection.
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">AP</div>
+                  <div class="testimonial-meta text-start">
+                    <h4>Ananya Patel</h4>
+                    <p>B.Sc Data Science &amp; Economics (Batch 2026)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next testimonial">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 7: FAQ Section
+         Bootstrap Accordion with 4 questions
+         ======================================================================= -->
+    <section id="faq" class="faq-section section-padding fade-in-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Find prompt answers to the most common queries about course eligibility and registration.
+          </p>
+        </div>
+
+        <!-- Accordion Container -->
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="accordion accordion-custom" id="faqAccordion">
+              <!-- Question 1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    How does the course enquiry and registration process work?
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    You begin by submitting an enquiry form with your academic interests. An assigned counselor checks your qualifications against college cutoffs, schedules a free advisory consultation, and facilitates your digital application submission.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Are there any hidden counseling or registration fees?
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    No. Our initial academic counseling and eligibility checks are 100% free of charge. Official university application and tuition fees are paid directly to the accredited institution according to standard schedules.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Can I apply for financial aid and merit scholarships?
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes. We actively match qualified candidates with merit-based tuition waivers, state scholarship funds, and student loan tie-ups offered by partner universities.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 4 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    What documents do I need to prepare before applying?
+                  </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Generally you will need your official high school or undergraduate transcripts, a government photo ID (passport or driver's license), entrance exam scorecards (if applicable), and passport-size photographs.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 8: Contact Section
+         Two columns: contact details + interactive enquiry form
+         ======================================================================= -->
+    <section id="contact" class="contact-section section-padding fade-in-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="section-title">Get in Touch with an Advisor</h2>
+          <p class="section-subtitle">
+            Have questions about seat availability or prerequisite coursework? Speak directly with our counseling team.
+          </p>
+        </div>
+
+        <div class="row g-5">
+          <!-- Left Column: Contact Information -->
+          <div class="col-lg-5">
+            <div class="contact-info-card">
+              <h3>Admissions Helpdesk</h3>
+              <p class="text-muted mb-4">
+                Visit our physical counseling room or reach out across our digital communication channels:
+              </p>
+
+              <!-- Detail Row 1 -->
+              <div class="contact-detail-row">
+                <div class="contact-detail-icon" aria-hidden="true">📍</div>
+                <div class="contact-detail-text">
+                  <h4>Campus Location</h4>
+                  <p>104 Knowledge Boulevard, University District, Tech City 560001</p>
+                </div>
+              </div>
+
+              <!-- Detail Row 2 -->
+              <div class="contact-detail-row">
+                <div class="contact-detail-icon" aria-hidden="true">📧</div>
+                <div class="contact-detail-text">
+                  <h4>Email Enquiries</h4>
+                  <p>admissions@studentregdesk.org</p>
+                </div>
+              </div>
+
+              <!-- Detail Row 3 -->
+              <div class="contact-detail-row">
+                <div class="contact-detail-icon" aria-hidden="true">📞</div>
+                <div class="contact-detail-text">
+                  <h4>Phone Hotline</h4>
+                  <p>+1 (800) 555-REG-DESK / (080) 4123-4567</p>
+                </div>
+              </div>
+
+              <!-- Detail Row 4 -->
+              <div class="contact-detail-row">
+                <div class="contact-detail-icon" aria-hidden="true">⏰</div>
+                <div class="contact-detail-text">
+                  <h4>Advisory Hours</h4>
+                  <p>Monday – Saturday: 9:00 AM – 6:00 PM (IST)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Enquiry Form -->
+          <div class="col-lg-7">
+            <div class="contact-form-card">
+              <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700;">Submit Course Enquiry</h3>
+
+              <!-- In-Page Success Alert (toggled via JavaScript) -->
+              <div id="formSuccessMessage" class="alert alert-success d-none" role="alert" tabindex="-1">
+                <h4 class="alert-heading mb-1" style="font-size: 1.15rem; font-weight: 700;">Thank You, <span id="successUserName">Student</span>! 🎉</h4>
+                <p class="mb-0">Your course enquiry has been received. One of our senior academic counselors will review your preferences and contact you via email within 24 business hours.</p>
+              </div>
+
+              <!-- Form Element -->
+              <form id="contactForm" novalidate>
+                <div class="mb-3">
+                  <label for="contactName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="contactName" placeholder="e.g. Priya Sharma" required>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="contactCourse" class="form-label">Desired Degree Track</label>
+                    <select class="form-select" id="contactCourse">
+                      <option value="Undergraduate" selected>Undergraduate (B.Sc / B.Tech / BCA)</option>
+                      <option value="Postgraduate">Postgraduate (M.Sc / MCA / MBA)</option>
+                      <option value="Executive">Professional &amp; Dual Degree</option>
+                      <option value="General">General Academic Counseling</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="contactMessage" class="form-label">Questions or Academic Background <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="contactMessage" rows="4" placeholder="Tell us about your previous qualifications, preferred college location, or any specific questions..." required></textarea>
+                </div>
+
+                <button type="submit" id="contactSubmit" class="btn-cta-primary w-100 justify-content-center">
+                  <span>Submit Registration Enquiry</span>
+                  <span aria-hidden="true">✉️</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SECTION 9: Site Footer (CSS Grid Layout)
+       Multi-column links, brand overview, and social placeholder icons
+       ========================================================================= -->
+  <footer id="footer" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <h3>🎓 StudentRegDesk</h3>
+          <p>
+            An official student course-enquiry platform committed to transparent college counseling, fee disclosures, and streamlined admissions.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Popular Programs -->
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul class="footer-links">
+            <li><a href="#courses">Computer Science</a></li>
+            <li><a href="#courses">Data Analytics</a></li>
+            <li><a href="#courses">Business Management</a></li>
+            <li><a href="#courses">Robotics &amp; AI</a></li>
+            <li><a href="#courses">Design &amp; Media</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Social Presence -->
+        <div class="footer-col">
+          <h4>Connect With Us</h4>
+          <p class="small text-muted mb-2">Follow our admissions updates on social media channels:</p>
+          <div class="social-links">
+            <a href="#footer" class="social-icon-btn" aria-label="Visit Twitter / X profile">𝕏</a>
+            <a href="#footer" class="social-icon-btn" aria-label="Visit LinkedIn page">in</a>
+            <a href="#footer" class="social-icon-btn" aria-label="Visit YouTube channel">▶</a>
+            <a href="#footer" class="social-icon-btn" aria-label="Visit GitHub repository">⌨</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Student Registration Desk. Cognifyz Full Stack Development Internship (Level 2 - Task 3).
+        </div>
+        <div class="d-flex gap-3">
+          <a href="#navbar" class="text-decoration-none text-muted">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       SCRIPTS: Bootstrap 5.3 JS Bundle (via jsDelivr CDN) & Custom Logic
+       ========================================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

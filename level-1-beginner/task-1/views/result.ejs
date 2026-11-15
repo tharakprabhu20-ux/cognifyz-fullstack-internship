@@ -1,0 +1,70 @@
+<%- include('partials/header', { title: 'Registration Confirmation - Student Desk' }) %>
+
+<div class="card">
+  <div class="card-header">
+    <div class="success-banner">
+      <strong>🎉 Registration Received Successfully!</strong>
+      <p class="timestamp-text">Recorded on: <%= submittedAt %></p>
+    </div>
+    <h2 class="card-title">Submitted Student Details</h2>
+    <p class="card-subtitle">Below is a summary of the form data received and processed by the server.</p>
+  </div>
+
+  <div class="table-container">
+    <table class="data-table" aria-label="Student Registration Details">
+      <tbody>
+        <tr>
+          <th>Full Name</th>
+          <td><strong><%= student.fullName %></strong></td>
+        </tr>
+        <tr>
+          <th>Email Address</th>
+          <td><%= student.email %></td>
+        </tr>
+        <tr>
+          <th>Age</th>
+          <td><%= student.age %> years old</td>
+        </tr>
+        <tr>
+          <th>Selected Course</th>
+          <td><span class="badge"><%= student.course %></span></td>
+        </tr>
+        <tr>
+          <th>Gender</th>
+          <td><%= student.gender %></td>
+        </tr>
+        <tr>
+          <th>Areas of Interest</th>
+          <td>
+            <% if (student.interests && student.interests.length > 0) { %>
+              <ul class="interest-list">
+                <% student.interests.forEach(function(interest) { %>
+                  <li><%= interest %></li>
+                <% }); %>
+              </ul>
+            <% } else { %>
+              <em>None selected</em>
+            <% } %>
+          </td>
+        </tr>
+        <tr>
+          <th>About You</th>
+          <td>
+            <% if (student.about && student.about.trim() !== '') { %>
+              <%= student.about %>
+            <% } else { %>
+              <em>Not provided</em>
+            <% } %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="btn-group">
+    <a href="/" class="btn-primary">&larr; Return to Registration Desk</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+

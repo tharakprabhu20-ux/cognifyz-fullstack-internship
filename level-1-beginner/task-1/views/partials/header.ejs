@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Student Registration Desk' %> | Cognifyz Task 1</title>
+  <style>
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Site Header - Dark Navy */
+    .site-header {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 1.25rem 1rem;
+      border-bottom: 3px solid #3b82f6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .site-header .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .site-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .site-tagline {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+
+    .nav-links a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(147, 197, 253, 0.15);
+      color: #ffffff;
+    }
+
+    .nav-links a:focus {
+      outline: 2px solid #60a5fa;
+      outline-offset: 2px;
+    }
+
+    /* Main Container (max 760px, centred) */
+    main {
+      max-width: 760px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    /* Card Component */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-header {
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .card-subtitle {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #334155;
+      font-size: 0.925rem;
+    }
+
+    .required {
+      color: #dc2626;
+      margin-left: 0.15rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #1e293b;
+      background-color: #ffffff;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+      border-color: #2563eb;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    /* Radios and Checkboxes */
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    .radio-option,
+    .checkbox-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: normal;
+      color: #1e293b;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .radio-option input[type="radio"],
+    .checkbox-option input[type="checkbox"] {
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: #2563eb;
+      cursor: pointer;
+    }
+
+    .radio-option input[type="radio"]:focus,
+    .checkbox-option input[type="checkbox"]:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      background-color: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 0.7rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-primary:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #334155;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.925rem;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .btn-secondary:focus {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #e2e8f0;
+      background-color: #ffffff;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    table.data-table th,
+    table.data-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+      vertical-align: top;
+    }
+
+    table.data-table th {
+      background-color: #f8fafc;
+      color: #475569;
+      font-weight: 600;
+      width: 32%;
+    }
+
+    table.data-table tr:last-child th,
+    table.data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.simple-table th {
+      width: auto;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+
+    /* Badges & Tags */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .success-banner {
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      padding: 1rem 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      color: #166534;
+    }
+
+    .interest-list {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+
+    .interest-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .empty-state {
+      padding: 1.5rem;
+      text-align: center;
+      background-color: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    .stars-display {
+      font-size: 1.2rem;
+      letter-spacing: 0.15rem;
+      color: #eab308;
+    }
+
+    .timestamp-text {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+
+    /* Site Footer */
+    .site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: auto;
+    }
+
+    .site-footer p {
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <a href="/" class="site-title">
+          <span>🎓</span> Student Registration Desk
+        </a>
+        <div class="site-tagline">Cognifyz Full Stack Development Internship &bull; Level 1: Task 1</div>
+      </div>
+      <nav class="nav-links">
+        <a href="/">Home (Forms)</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+

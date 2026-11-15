@@ -1,0 +1,24 @@
+{
+  "name": "task-1-student-registration-desk",
+  "version": "1.0.0",
+  "description": "Task 1: HTML Structure and Basic Server Interaction - Student Registration Desk app for Cognifyz Full Stack Development internship (Level 1: Beginner)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "ejs",
+    "cognifyz",
+    "fullstack",
+    "internship"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
+

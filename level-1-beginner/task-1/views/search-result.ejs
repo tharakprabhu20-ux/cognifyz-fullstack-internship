@@ -1,0 +1,48 @@
+<%- include('partials/header', { title: 'Course Search Results - Student Desk' }) %>
+
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Course Search Results</h2>
+    <p class="card-subtitle">
+      Showing results for search term: <strong>"<%= query %>"</strong>
+    </p>
+  </div>
+
+  <% if (results && results.length > 0) { %>
+    <p style="margin-bottom: 0.75rem; color: #166534; font-weight: 500;">
+      Found <%= results.length %> matching course<%= results.length > 1 ? 's' : '' %>:
+    </p>
+    <div class="table-container">
+      <table class="data-table simple-table" aria-label="Matching Courses">
+        <thead>
+          <tr>
+            <th style="width: 15%;">#</th>
+            <th>Course Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach(function(course, index) { %>
+            <tr>
+              <td><strong><%= index + 1 %></strong></td>
+              <td><%= course %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  <% } else { %>
+    <div class="empty-state">
+      <p><strong>No course matches found for "<%= query %>".</strong></p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+        Try searching with different keywords like <em>Science</em>, <em>BCA</em>, or <em>Technology</em>.
+      </p>
+    </div>
+  <% } %>
+
+  <div class="btn-group">
+    <a href="/" class="btn-primary">&larr; Back to Search &amp; Forms</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+

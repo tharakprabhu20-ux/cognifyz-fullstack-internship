@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+
+<!-- Success Banner Card (Step 4: Safe Display of Validated Record) -->
+<section style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px 24px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); margin-bottom: 24px; text-align: left;">
+
+  <!-- Success Icon & Header -->
+  <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
+    <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #dcfce7; display: flex; align-items: center; justify-content: center; color: #16a34a; font-size: 24px; font-weight: bold;">
+      &#10003;
+    </div>
+    <div>
+      <h1 style="margin: 0; font-size: 1.4rem; font-weight: 700; color: #15803d; letter-spacing: -0.01em;">
+        Registration Successful!
+      </h1>
+      <p style="margin: 2px 0 0 0; font-size: 0.875rem; color: #64748b;">
+        Student registration record has been validated and temporarily stored in server memory.
+      </p>
+    </div>
+  </div>
+
+  <!-- Submitted Details Table / Card -->
+  <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+    <h2 style="margin: 0 0 14px 0; font-size: 1.05rem; font-weight: 600; color: #1e293b; border-bottom: 1px dashed #cbd5e1; padding-bottom: 8px;">
+      Registered Student Details
+    </h2>
+
+    <dl style="margin: 0; display: grid; grid-template-columns: 140px 1fr; row-gap: 10px; font-size: 0.9rem;">
+      <dt style="font-weight: 600; color: #475569;">Registration ID:</dt>
+      <dd style="margin: 0; color: #0f172a; font-weight: 700;">#<%= student.id %></dd>
+
+      <dt style="font-weight: 600; color: #475569;">Full Name:</dt>
+      <dd style="margin: 0; color: #0f172a;"><%= student.fullName %></dd>
+
+      <dt style="font-weight: 600; color: #475569;">Email Address:</dt>
+      <dd style="margin: 0; color: #0f172a;"><%= student.email %></dd>
+
+      <dt style="font-weight: 600; color: #475569;">Phone Number:</dt>
+      <dd style="margin: 0; color: #0f172a;"><%= student.phone %></dd>
+
+      <dt style="font-weight: 600; color: #475569;">Date of Birth:</dt>
+      <dd style="margin: 0; color: #0f172a;"><%= student.dob %></dd>
+
+      <dt style="font-weight: 600; color: #475569;">Course:</dt>
+      <dd style="margin: 0; color: #0f172a;"><%= student.course %></dd>
+
+      <dt style="font-weight: 600; color: #475569;">Year of Study:</dt>
+      <dd style="margin: 0; color: #0f172a;"><%= student.year %> Year</dd>
+
+      <dt style="font-weight: 600; color: #475569;">Technical Skills:</dt>
+      <dd style="margin: 0; color: #0f172a;">
+        <% if (student.skills && student.skills.length > 0) { %>
+          <%= student.skills.join(', ') %>
+        <% } else { %>
+          None specified
+        <% } %>
+      </dd>
+
+      <dt style="font-weight: 600; color: #475569;">About You:</dt>
+      <dd style="margin: 0; color: #0f172a;">
+        <%= student.about && student.about.length > 0 ? student.about : 'Not provided' %>
+      </dd>
+
+      <dt style="font-weight: 600; color: #475569;">Submitted At:</dt>
+      <dd style="margin: 0; color: #64748b; font-size: 0.85rem;"><%= student.createdAt %> (IST)</dd>
+    </dl>
+  </div>
+
+  <!-- Navigation Action Buttons -->
+  <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+    <a
+      href="/"
+      style="display: inline-block; padding: 10px 18px; font-size: 0.9rem; font-weight: 600; color: #ffffff; background-color: #2563eb; text-decoration: none; border-radius: 6px;"
+    >
+      &larr; Register Another Student
+    </a>
+    <a
+      href="/submissions"
+      style="display: inline-block; padding: 10px 18px; font-size: 0.9rem; font-weight: 600; color: #334155; background-color: #f1f5f9; border: 1px solid #cbd5e1; text-decoration: none; border-radius: 6px;"
+    >
+      View All Submissions &rarr;
+    </a>
+  </div>
+
+</section>
+
+<%- include('partials/footer') %>
+

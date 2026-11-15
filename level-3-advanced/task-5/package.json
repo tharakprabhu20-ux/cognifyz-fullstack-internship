@@ -1,0 +1,13 @@
+{
+  "name": "cognifyz-level3-task5",
+  "version": "1.0.0",
+  "description": "Student Task Manager - RESTful API and Front-End Interaction",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/api.test.js"
+  },
+  "dependencies": {
+    "express": "4.22.3"
+  }
+}

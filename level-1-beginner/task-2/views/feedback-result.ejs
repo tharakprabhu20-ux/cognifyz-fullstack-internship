@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<section style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 32px 24px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); margin-bottom: 24px;">
+  <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
+    <div style="width: 44px; height: 44px; border-radius: 50%; background-color: #e0f2fe; display: flex; align-items: center; justify-content: center; color: #0284c7; font-size: 22px;">
+      &#9733;
+    </div>
+    <div>
+      <h1 style="margin: 0; font-size: 1.4rem; font-weight: 700; color: #0f172a; letter-spacing: -0.01em;">
+        Thank You for Your Feedback!
+      </h1>
+      <p style="margin: 2px 0 0 0; font-size: 0.875rem; color: #64748b;">
+        Your submission helps improve our registration desk workflow.
+      </p>
+    </div>
+  </div>
+
+  <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+    <dl style="margin: 0; display: grid; grid-template-columns: 140px 1fr; row-gap: 12px; font-size: 0.9rem;">
+      <dt style="font-weight: 600; color: #475569;">Submitted By:</dt>
+      <dd style="margin: 0; color: #0f172a; font-weight: 600;"><%= name %></dd>
+
+      <dt style="font-weight: 600; color: #475569;">Rating Given:</dt>
+      <dd style="margin: 0; color: #0f172a; font-weight: 600;">
+        <%= rating %> / 5 Stars
+        <span style="color: #f59e0b; margin-left: 6px;">
+          <% for (let i = 0; i < rating; i++) { %>&#9733;<% } %>
+        </span>
+      </dd>
+
+      <dt style="font-weight: 600; color: #475569;">Comments:</dt>
+      <dd style="margin: 0; color: #334155;">
+        <%= comment && comment.length > 0 ? comment : 'No additional comments provided.' %>
+      </dd>
+    </dl>
+  </div>
+
+  <div>
+    <a
+      href="/"
+      style="display: inline-block; padding: 10px 18px; font-size: 0.9rem; font-weight: 600; color: #ffffff; background-color: #2563eb; text-decoration: none; border-radius: 6px;"
+    >
+      &larr; Back to Registration Desk
+    </a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+

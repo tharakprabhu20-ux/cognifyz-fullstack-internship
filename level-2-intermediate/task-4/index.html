@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cognifyz Full Stack Development Internship - Level 2 Task 4: Complex Form Validation and Dynamic DOM Manipulation">
+  <title>Cognifyz Student Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessible Skip to Content Link -->
+  <a href="#app" class="skip-link">Skip to main content</a>
+
+  <!-- Global Application Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <a href="#/home" class="brand-link" aria-label="Cognifyz Student Portal Home">
+          <span class="brand-icon" aria-hidden="true">🎓</span>
+          <span class="brand-text">Student Portal</span>
+        </a>
+      </div>
+
+      <nav class="app-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#/home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#/register" class="nav-link">Register</a>
+          </li>
+          <li class="nav-item">
+            <a href="#/students" class="nav-link">Students</a>
+          </li>
+          <li class="nav-item">
+            <a href="#/about" class="nav-link">About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dynamic SPA Main Content Container (swapped by router.js) -->
+  <main id="app" class="main-content" tabindex="-1">
+    <!-- Initial fallback / noscript placeholder -->
+    <noscript>
+      <div class="page-content">
+        <div class="card">
+          <h1>JavaScript Required</h1>
+          <p>This Single-Page Application requires JavaScript enabled to run form validation, DOM manipulation, and client routing.</p>
+        </div>
+      </div>
+    </noscript>
+  </main>
+
+  <!-- Accessible Toast Notifications Region -->
+  <div id="toast-container" class="toast-container" role="region" aria-label="Notifications"></div>
+
+  <!-- Global Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p class="footer-text">
+        Cognifyz Full Stack Development Internship &bull; Level 2 (Intermediate) &bull; Task 4: Complex Form Validation &amp; Dynamic DOM Manipulation
+      </p>
+      <p class="footer-subtext">
+        Pure Vanilla HTML, CSS &amp; JavaScript &bull; Accessible &bull; Local Storage Persistence &bull; Zero External Dependencies
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts in dependency order (No ES modules, pure Vanilla JS) -->
+  <script src="js/validators.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<%- include('partials/header', { title: 'Feedback Acknowledged - Student Desk' }) %>
+
+<div class="card">
+  <div class="card-header">
+    <div class="success-banner">
+      <strong>✨ Thank you for your feedback!</strong>
+      <p class="timestamp-text">We appreciate you taking the time to help us improve the desk experience.</p>
+    </div>
+    <h2 class="card-title">Feedback Summary</h2>
+    <p class="card-subtitle">Server-processed feedback response:</p>
+  </div>
+
+  <div class="table-container">
+    <table class="data-table" aria-label="Feedback Details">
+      <tbody>
+        <tr>
+          <th>Submitted By</th>
+          <td><strong><%= feedback.name %></strong></td>
+        </tr>
+        <tr>
+          <th>Rating (Numeric)</th>
+          <td>
+            <span class="badge"><%= feedback.rating %> / 5</span>
+            <span class="stars-display" aria-hidden="true">
+              <%= '★'.repeat(feedback.rating) + '☆'.repeat(5 - feedback.rating) %>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <th>Comments</th>
+          <td>
+            <% if (feedback.comment && feedback.comment.trim() !== '') { %>
+              <%= feedback.comment %>
+            <% } else { %>
+              <em>No comment provided</em>
+            <% } %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="btn-group">
+    <a href="/" class="btn-primary">&larr; Return to Registration Desk</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
