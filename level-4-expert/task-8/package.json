@@ -1,0 +1,20 @@
+{
+  "name": "cognifyz-level4-task8",
+  "version": "1.0.0",
+  "description": "Student Task Manager - Advanced Server-Side Functionality",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/api.test.js && node tests/task7.test.js && node tests/task8.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "express": "4.22.3",
+    "express-rate-limit": "^8.7.4",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.10.1",
+    "redis": "^6.3.1"
+  }
+}
